@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-color: rgb(197, 197, 197);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    margin-top: 10px;
+    background-color: rgb(153, 153, 153);
+    font-size: large;
+    outline: none;
+    cursor: pointer;
+}
+.wrong{
+    position: absolute;
+    z-index: 2;
+    width: 15px;
+}
+h1{
+    text-align: center;
+    margin: 10px;
+}
+#instructions, #minesLeft, #game-status{
+    color: white;
+}
+#game-status{
+    font-size: 50px;
+}
+#mines-left{
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+#game-field{
+    margin-top: 20px;
+    display: grid;
+    grid-gap: 3px;
+    grid-template: repeat(var(--size), 40px) / repeat(var(--size), 40px);
+}
+.tile{
+    position: relative;
+    background-color: rgb(154 154 154);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tile[data-status="hidden"]:hover{
+    background-color: rgb(224, 224, 224);
+}
+
+.tile > img{
+    width: 60%;
+}
+
+.tile[data-status="shown"]{
+    background-color: rgb(128, 128, 128);
+}
+.tile[data-mine="clicked"]{
+    background-color: red;
+}
+.tile[data-adjacent='1']{
+    color: rgb(0, 0, 199);
+    font-weight: bolder;
+}
+.tile[data-adjacent='2']{
+    color: #2fff2f;
+    font-weight: bolder;
+}
+.tile[data-adjacent='3']{
+    color: rgb(255, 0, 0);
+    font-weight: bolder;
+}
+.tile[data-adjacent='4']{
+    color: rgb(35, 0, 100);
+    font-weight: bolder;
+}
+.tile[data-adjacent='5']{
+    color: rgb(146, 28, 28);
+    font-weight: bolder;
+}
+.tile[data-adjacent='6']{
+    color: rgb(22, 171, 197);
+    font-weight: bolder;
+}
+.tile[data-adjacent='7']{
+    color: rgb(141, 0, 71);
+    font-weight: bolder;
+}
+.tile[data-adjacent='8']{
+    color: rgb(80, 80, 80);
+    font-weight: bolder;
+}
